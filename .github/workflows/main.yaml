@@ -31,7 +31,7 @@ jobs:
         with:
           branch: gh-pages
           folder: ./Frontend/cotton/build
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
       # Add backend deployment steps here
