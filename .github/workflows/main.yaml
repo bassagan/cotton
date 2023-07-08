@@ -19,10 +19,14 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd ./Frontend/cotton
+          npm install
 
       - name: Build
-        run: npm run build
+        run: |
+          cd ./Frontend/cotton
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
