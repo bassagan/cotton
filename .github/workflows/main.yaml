@@ -18,20 +18,14 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install frontend dependencies
-        working-directory: ./Frontend/cotton
+      - name: Install dependencies
         run: npm install
 
-      - name: Build frontend
-        working-directory: ./Frontend/cotton
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: ./Frontend/cotton/build
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-
-      # Add backend deployment steps here
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Frontend/cotton/build
