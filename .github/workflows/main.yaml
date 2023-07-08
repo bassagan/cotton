@@ -26,11 +26,12 @@ jobs:
         working-directory: ./Frontend/cotton
         run: npm run build
 
-      - name: Deploy frontend to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           branch: gh-pages
           folder: ./Frontend/cotton/build
+          token: ${{ secrets.GH_TOKEN }}
 
 
       # Add backend deployment steps here
